@@ -1,12 +1,49 @@
+# SimSiam
+
+"Exploring Simple Siamese Representation Learning"
+
+-Xinlei Chen, Kaiming He (Facebook AI Research)
+
+---
+
+## Introduction
+
+### Siamese Networks
+
 <details> <summary>Siamese Networks 보기</summary>
  
  DeepLearning에서는 학습을 위해 많은 양의 데이터를 필요로 합니다. 그래서 데이터가 부족하다는 말은, DeepLearning 모델의 성능이 좋지 않음을 암시합니다.
 
  그래서 고안된 Siamese Networks는 데이터 양이 적거나, Imbalanced Class Distribution한 데이터에서도 모델의 정확성을 높힐 수 있습니다.
  
- Siamese Networks는 동일한 parameters나 weights을 공유하는 twin networks로 구성됩니다.
+ Siamese Networks는 동일한 parameters나 weights을 공유하는 Twin Networks로 구성됩니다.
  
  이 네트워크는 한 쌍의 inputs를 받아 각각의 features를 추출한 뒤 두 inputs 간의 유사도를 계산합니다. 이 유사도를 기반으로 Classification을 수행하며, 같은 Class의 데이터는 거리를 최소화하고, 다른 Class의 데이터는 거리를 늘리는 방식으로 학습됩니다.
+
+```python
+# Twin Network
+class TwinNetwork(nn.Module):
+    def __init__(self):
+        super(TwinNetwork, self).__init__()
+        self.shared_layers = nn.Sequential(
+            nn.Conv2d(1, 64, kernel_size=3),
+            nn.ReLU(),
+            nn.MaxPool2d(2))
+
+    def forward(self, x):
+        return self.shared_layers(x)
+
+# Siamese Network
+class SiameseNetwork(nn.Module):
+    def __init__(self):
+        super(SiameseNetwork, self).__init__()
+        self.twin_network = TwinNetwork()
+
+    def forward(self, input1, input2):
+        output1 = self.twin_network(input1)
+        output2 = self.twin_network(input2)
+        return output1, output2
+```
 
 - Siamese Networks 장점
 
@@ -84,3 +121,6 @@ Loss Functions
      Negative: "B"라는 데이터 (다른 클래스)
 
 </details>
+
+
+
