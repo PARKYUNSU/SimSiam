@@ -9,7 +9,7 @@
 
 <img src="https://github.com/user-attachments/assets/d54df74e-8f8c-4d23-9985-a40c948c2ee7" width=400>
 
-<img src="https://github.com/user-attachments/assets/e91bfd4f-1db7-4727-8c60-1b84a3b2a66f" width=400>
+<img src="https://github.com/user-attachments/assets/e91bfd4f-1db7-4727-8c60-1b84a3b2a66f" width=300>
 
 
 Loss Functions
