@@ -111,8 +111,6 @@ Loss Functions
    - $Negative:$ Anchor와 다른 클래스에 속하는 데이터.
 
 <img src="https://github.com/user-attachments/assets/5e0ac3d3-52d0-41af-9ccf-6862098b913d" width=500>
-
-  ex)
      
      Anchor: "A"라는 데이터
      
