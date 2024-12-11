@@ -1,6 +1,6 @@
 # SimSiam
 
-"Exploring Simple Siamese Representation Learning"
+"Exploring Simple Siamese Representation Learning" - 2020
 
 -Xinlei Chen, Kaiming He (Facebook AI Research)
 
