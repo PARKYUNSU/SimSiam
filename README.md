@@ -47,8 +47,11 @@ Loss Functions
    - 같은 Class의 샘플: 거리 D를 최소화
       
    - 다른 Class의 샘플: 거리를 margin 이상으로 벌림
+  
+<img src="https://github.com/user-attachments/assets/5264586d-d74a-44fe-9f17-f4565b30b215" width=500>
 
-1. Triplet Loss
+
+2. Triplet Loss
    
    Triplet Loss는 Anchor, Positive, Negative로 이루어진 triplet을 사용하여, Anchor와 Positive 거리를 최소화, Anchor와 Negative 거리를 최대화하게 학습
 
@@ -68,12 +71,14 @@ Loss Functions
   
    - $Negative:$ Anchor와 다른 클래스에 속하는 데이터.
 
+<img src="https://github.com/user-attachments/assets/5e0ac3d3-52d0-41af-9ccf-6862098b913d" width=500>
+
   ex)
      
-     Anchor: "A"라는 사람의 얼굴 사진
+     Anchor: "A"라는 데이터
      
-     Positive: 다른 각도에서 찍힌 "A"의 얼굴 사진 (같은 클래스)
+     Positive: 다른 "A"의 데이터 (같은 클래스)
      
-     Negative 샘플: "B"의 얼굴 사진 (다른 클래스)
-     
+     Negative: "B"라는 데이터 (다른 클래스)
+
 </details>
